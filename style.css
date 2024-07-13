@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('images/my-gradient.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
+}
+
+.card_container {
+  display: grid;
+  row-gap: 7rem;
+  margin-top: 50px;
+  
+}
+
+.card_box {
+  position: relative;
+  overflow: hidden;
+}
+
+.card_img {
+  width: 328px;
+  border-radius: 1.5rem;
+}
+
+.card_content {
+  width: 280px;
+  background: rgba(13, 13, 13, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(5.4px);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.611);
+  border-radius: 1rem;
+  position: absolute;
+  overflow: hidden;
+  bottom: 50rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  backdrop-filter: blur(10px);
+  transition: opacity 1s 1s;
+}
+
+.card_description {
+  display: block;
+  font-size: .75rem;
+  margin-bottom: .25rem;
+  font-weight: 400;
+  color: #a8a8a8;
+}
+
+.card_title {
+  font-size: 25px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  margin-bottom: .75rem;
+}
+
+.card_button {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(214, 255, 10, 0.627);
+  transition: 0.3s;
+}
+
+.card_button:hover {
+  color: rgb(166, 255, 0);
+}
+
+.card_box:hover .card_content {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.card_box:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.card_box:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+.card_box:not(:hover) .card_description 
+  {
+  animation: remove-color 1s forwards;
+}
+
+.card_box:not(:hover) .card_content {
+  animation: remove-data 1s forwards;
+}
+
+
+
+@keyframes show-data {
+
+  50% {
+    transform: translateY(60rem);
+    background-color: rgba(0, 0, 0, 0);
+    
+  }
+
+  100% {
+    transform: translateY(54rem);
+
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+
+@keyframes remove-color {
+  0% {
+
+    background: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+  }
+
+  50% {
+
+    background:rgba(0, 0, 0, 0);
+    color: #00000000;
+  }
+
+  100% {
+
+    background: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+  }
+}
+@keyframes remove-data {
+  0% {
+    transform: translateY(49rem);
+    background: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+  }
+
+  50% {
+    transform: translateY(48rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background:rgba(0, 0, 0, 0);
+    border: 4px solid rgb(241, 78, 3);
+  }
+
+  100% {
+    transform: translateY(55rem);
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgb(241, 78, 3);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+
+  50% {
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .card_content {
+    width: 250px;
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .container {
+    height: 100vh;
+
+  }
+
+  .card {
+    width: 328px;
+    height: 583px;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    
+  }
+ 
+
+
+  .card_container {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 50px;
+  }
+
+  .card_content {
+    padding-inline: 2.5rem;
+  }
+}
