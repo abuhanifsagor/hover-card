@@ -71,6 +71,9 @@ img {
   margin-bottom: .25rem;
   font-weight: 500;
   color: #ffffffa4;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-decoration: underline;
 }
 
 .card_title {
