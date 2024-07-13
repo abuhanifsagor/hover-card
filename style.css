@@ -32,7 +32,7 @@ img {
   display: grid;
   row-gap: 7rem;
   margin-top: 50px;
-  
+
 }
 
 .card_box {
@@ -69,8 +69,8 @@ img {
   display: block;
   font-size: .75rem;
   margin-bottom: .25rem;
-  font-weight: 400;
-  color: #c4c0c0;
+  font-weight: 500;
+  color: #ffffffa4;
 }
 
 .card_title {
@@ -105,8 +105,8 @@ img {
 .card_box:not(:hover) {
   animation: show-overflow 2s forwards;
 }
-.card_box:not(:hover) .card_description 
-  {
+
+.card_box:not(:hover) .card_description {
   animation: remove-color 1s forwards;
 }
 
@@ -121,7 +121,7 @@ img {
   50% {
     transform: translateY(60rem);
     background-color: rgba(0, 0, 0, 0);
-    
+
   }
 
   100% {
@@ -146,7 +146,7 @@ img {
 
   50% {
 
-    background:rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
     color: #00000000;
   }
 
@@ -156,6 +156,7 @@ img {
     color: rgba(0, 0, 0, 0);
   }
 }
+
 @keyframes remove-data {
   0% {
     transform: translateY(49rem);
@@ -168,7 +169,7 @@ img {
     width: 40px;
     height: 40px;
     border-radius: 50px;
-    background:rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
     border: 4px solid rgb(241, 78, 3);
   }
 
@@ -213,9 +214,9 @@ img {
     height: 583px;
     overflow: hidden;
     border-radius: 1.5rem;
-    
+
   }
- 
+
 
 
   .card_container {
